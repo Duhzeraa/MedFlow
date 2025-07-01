@@ -1,4 +1,4 @@
-# 🏥 MedFlow - Primeira Versão
+# 🏥 MedFlow
 
 A **MedFlow** é uma plataforma pensada para tornar o acesso à saúde mais simples, rápido e inteligente. Esta é a **versão inicial** do projeto, criada com foco em estrutura visual e navegação básica usando apenas HTML e CSS.
 
@@ -20,5 +20,5 @@ Apresentar a proposta visual e a experiência inicial da plataforma MedFlow, ser
 
 ---
 
-> “O futuro da saúde começa com uma boa primeira impressão.”  
+> “Se a saúde é um direito, a tecnologia é o caminho.” 
 > — MedFlow, versão 1.0
