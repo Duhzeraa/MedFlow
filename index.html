@@ -1,63 +1,270 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>MedFlow | Início</title>
-    <link rel="icon" href="img/medflow.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medflow - Saúde para PCDs e Idosos com Tecnologia e IA</title>
+  <meta name="description" content="Medflow: aplicativo de saúde acessível para PCDs e idosos com pré-consulta por IA, médicos especializados e planos flexíveis." />
+  <meta name="keywords" content="Medflow, saúde, PCD, idosos, inteligência artificial, pré-consulta, médicos, planos, acessibilidade" />
+  <link rel="icon" href="img/medflow.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>            
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/medflowBanner.png" alt="Medflow Logo">
-        </a>
+<body>
+  <!-- Header / Navbar -->
+  <header class="header" role="banner">
+    <nav class="navbar container" aria-label="Menu principal">
+      <a href="#" class="logo" aria-label="Medflow - Página inicial">
+        <img src="img/medflow.svg" alt="" width="50" height="50">
+        <span class="logo-text">Medflow</span>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menu">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation" role="menubar">
+        <li role="none"><a href="#" role="menuitem" tabindex="0">Home</a></li>
+        <li role="none"><a href="#funcionalidades" role="menuitem" tabindex="0">Funcionalidades</a></li>
+        <li role="none"><a href="#planos" role="menuitem" tabindex="0">Planos</a></li>
+        <li role="none"><a href="#sobre" role="menuitem" tabindex="0">Sobre</a></li>
+        <li role="none"><a href="#contato" role="menuitem" tabindex="0">Contato</a></li>
+        <li role="none"><a href="AI/chatbot.html" role="menuitem" tabindex="0"id="iaTab">IA</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" aria-label="Baixar aplicativo Medflow">Baixar App</a>
+        <button id="toggle-theme" class="btn btn-secondary" aria-pressed="false" aria-label="Alternar modo claro e escuro">
+          🌙
+        </button>
       </div>
+    </nav>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="hero container" aria-label="Seção principal">
+    <div class="hero-text">
+      <h1>Cuide da sua saúde com tecnologia e inteligência artificial</h1>
+      <p class="subtitle">Pré-consulta com IA e médicos especializados na palma da sua mão</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary" aria-label="Baixar aplicativo Medflow">Baixar App</a>
+        <a href="#funcionalidades" class="btn btn-outline" aria-label="Saiba mais sobre funcionalidades">Saiba Mais</a>
+      </div>
+    </div>
+    <div class="hero-image" aria-hidden="true">
+      <img src="img/hospital.jpg" alt="Ilustração de saúde e tecnologia" />
+    </div>
+  </section>
 
-  <nav class="interface"> 
-    <ul>
-      <li><a href="html/Funciona.html">Como Funciona</a></li>
-      <li><a href="html/Pacientes.html">Para Pacientes</a></li>
-      <li><a href="html/Medicos.html">Para Médicos</a></li>
-      <li><a href="html/PlanosPreços.html">Planos & Preços</a></li>
-    </ul>
-  </nav>  
+  <!-- Funcionalidades -->
+  <section id="funcionalidades" class="funcionalidades container" aria-label="Funcionalidades do Medflow">
+    <h2>Funcionalidades</h2>
+    <div class="cards">
+      <article class="card" tabindex="0" aria-labelledby="func1-title" role="region">
+        <div class="icon" aria-hidden="true">
+          <svg width="48" height="48" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2a7 7 0 0 0-7 7v3a7 7 0 0 0 14 0v-3a7 7 0 0 0-7-7zm0 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0v-3a5 5 0 0 1 5-5z"/>
+            <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+          </svg>
+        </div>
+        <h3 id="func1-title">Pré-consulta com IA</h3>
+        <p>Receba uma avaliação inicial rápida e precisa com nossa inteligência artificial.</p>
+      </article>
+      <article class="card" tabindex="0" aria-labelledby="func2-title" role="region">
+        <div class="icon" aria-hidden="true">
+          <svg width="48" height="48" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zM6 20v-2c0-2.21 3.58-4 6-4s6 1.79 6 4v2H6z"/>
+          </svg>
+        </div>
+        <h3 id="func2-title">Indicação de médicos especializados</h3>
+        <p>Encontre profissionais qualificados para suas necessidades específicas.</p>
+      </article>
+      <article class="card" tabindex="0" aria-labelledby="func3-title" role="region">
+        <div class="icon" aria-hidden="true">
+          <svg width="48" height="48" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </div>
+        <h3 id="func3-title">Planos para médicos e clínicas</h3>
+        <p>Ofereça seus serviços com planos flexíveis e acessíveis para profissionais e clínicas.</p>
+      </article>
+      <article class="card" tabindex="0" aria-labelledby="func4-title" role="region">
+        <div class="icon" aria-hidden="true">
+          <svg width="48" height="48" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8h4a4 4 0 0 0 8 0h4a8 8 0 0 1-8 8z"/>
+          </svg>
+        </div>
+        <h3 id="func4-title">Acesso rápido e fácil para PCDs e idosos</h3>
+        <p>Interface simples e acessível, pensada para todas as necessidades especiais.</p>
+      </article>
+    </div>
+  </section>
 
-  <div class="login-box">
-    <a href="html/login.html">Login</a>
+  <!-- Planos / Monetização -->
+  <section id="planos" class="planos container" aria-label="Planos e preços">
+    <h2>Planos</h2>
+    <p class="planos-intro">Escolha o plano ideal para você, sua clínica ou seu consultório.</p>
+    <div class="planos-table-wrapper" tabindex="0" aria-label="Tabela comparativa de planos">
+      <table class="planos-table" role="table">
+  <thead>
+    <tr>
+      <th scope="col">Plano</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Benefícios</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Clínicas Parceiras</th>
+      <td>R$ 499/mês</td>
+      <td>
+        <ul>
+          <li>Atendimento prioritário</li>
+          <li>Gestão integrada</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Médicos Básico</th>
+      <td>R$ 99/mês</td>
+      <td>
+        <ul>
+          <li>Perfil profissional</li>
+          <li>Agenda online</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Consultas Avulsas</th>
+      <td>R$ 79/consulta</td>
+      <td>
+        <ul>
+          <li>Sem mensalidade</li>
+          <li>Agendamento rápido</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  </section>
+
+  <!-- Sobre a Medflow -->
+ <section id="sobre" class="sobre container" aria-label="Sobre a Medflow">
+  <h2>Sobre a Medflow</h2>
+  <div class="sobre-text">
+    <p>
+      A Medflow é uma empresa dedicada a transformar o cuidado com a saúde de PCDs e idosos, unindo tecnologia e inteligência artificial para facilitar o acesso a serviços médicos especializados.
+    </p>
   </div>
-</header>
-    
-
-<section class="hero">
-  <div class="conteudo-horizontal">
-
-    <div class="robo">
-      <img src="img/robo.png" alt="Robô flutuante" />
-    </div>
-
-    <div class="barra-pesquisa">
-      <input type="text" placeholder="O que você está sentindo?" />
-      <button type="submit">🔍</button>
-    </div>
-
+  <div class="sobre-cards">
+    <article class="sobre-card" tabindex="0" role="region" aria-labelledby="missao-title">
+      <div class="icon" aria-hidden="true">
+        <!-- Exemplo de ícone SVG simples -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+      </div>
+      <h3 id="missao-title">Missão</h3>
+      <p>Promover saúde acessível e de qualidade para todos.</p>
+    </article>
+    <article class="sobre-card" tabindex="0" role="region" aria-labelledby="visao-title">
+      <div class="icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h3 id="visao-title">Visão</h3>
+      <p>Ser referência nacional em tecnologia para saúde acessível.</p>
+    </article>
+    <article class="sobre-card" tabindex="0" role="region" aria-labelledby="valores-title">
+      <div class="icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09"/></svg>
+      </div>
+      <h3 id="valores-title">Valores</h3>
+      <p>Inclusão, inovação, confiança, simplicidade e empatia.</p>
+    </article>
   </div>
 </section>
 
 
-<footer class="footer">
-  <div class="footer-content">
-    <a href="https://www.instagram.com/medflow.app" target="_blank" class="insta-link">
-      <i class="bi bi-instagram"></i> 
-    </a>
-    <p>&copy; 2025 Medflow. Todos os direitos reservados.</p>
-    
-  </div>
-</footer>
+  <!-- Depoimentos / Avaliações -->
+  <section class="depoimentos container" aria-label="Depoimentos de usuários">
+    <h2>Depoimentos</h2>
+    <div class="depoimentos-cards">
+      <article class="depoimento-card" tabindex="0" role="region" aria-labelledby="dep1-name">
+        <img class="user-photo" src="url-da-foto-do-usuario.jpg" alt="Foto do usuário Ana Silva" onerror="this.onerror=null;this.src='img/padrao.png';" />
+        <h3 id="dep1-name">Ana Silva</h3>
+        <p>"O Medflow facilitou muito minha vida. A pré-consulta com IA é rápida e me ajuda a entender melhor meus sintomas antes de ir ao médico."</p>
+      </article>
+      <article class="depoimento-card" tabindex="0" role="region" aria-labelledby="dep2-name">
+        <img class="user-photo" src="url-da-foto-do-usuario.jpg" alt="Foto do usuário João Pereira" onerror="this.onerror=null;this.src='img/padrao.png';" />
+        <h3 id="dep2-name">João Pereira</h3>
+        <p>"Como idoso, achei o app muito fácil de usar e a indicação de médicos especializados me deu muita segurança."</p>
+      </article>  
+      <article class="depoimento-card" tabindex="0" role="region" aria-labelledby="dep3-name">
+        <img class="user-photo" src="url-da-foto-do-usuario.jpg" alt="Foto do usuário Maria Oliveira" onerror="this.onerror=null;this.src='img/padrao.png';" />
+        <h3 id="dep3-name">Maria Oliveira</h3>
+        <p>"Os planos para clínicas são excelentes e ajudaram meu consultório a crescer com tecnologia acessível."</p>
+      </article>
+    </div>
+  </section>
 
+  <!-- Contato -->
+  <section id="contato" class="contato container" aria-label="Formulário de contato">
+    <h2>Contato</h2>
+    <form id="contact-form" novalidate aria-describedby="form-instructions">
+      <p id="form-instructions">Preencha o formulário abaixo para entrar em contato conosco.</p>
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error" />
+        <span class="error-message" id="name-error" aria-live="polite"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error" />
+        <span class="error-message" id="email-error" aria-live="polite"></span>
+      </div>
+      <div class="form-group">
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="message-error"></textarea>
+        <span class="error-message" id="message-error" aria-live="polite"></span>
+      </div>
+      <button type="submit" class="btn btn-primary" aria-label="Enviar mensagem">Enviar</button>
+      <p id="form-feedback" role="alert" aria-live="assertive" class="form-feedback"></p>
+    </form>
+  </section>
 
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-content">
+      <nav class="footer-nav" aria-label="Links rápidos">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="ia.html">IA</a></li>
+        </ul>
+      </nav>
+      <div class="social-media" aria-label="Redes sociais">
+        <a href="https://instagram.com/medflow.ai" target="_blank" rel="noopener" aria-label="Instagram Medflow" title="Instagram">
+          <svg width="24" height="24" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/company/medflow" target="_blank" rel="noopener" aria-label="LinkedIn Medflow" title="LinkedIn">
+          <svg width="24" height="24" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 5h4v12H4V8zm6 0h4v2.5a4 4 0 0 1 3.5-1.75c3.5 0 4 2.25 4 5v6.25h-4v-5.5c0-1.25-.25-2.75-2-2.75-2 0-2.25 1.5-2.25 2.625V20H10V8z"/>
+          </svg>
+        </a>
+        <a href="https://youtube.com/medflow" target="_blank" rel="noopener" aria-label="YouTube Medflow" title="YouTube">
+          <svg width="24" height="24" fill="#005BBB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M10 15l5.19-3L10 9v6zm11-3c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>© 2025 Medflow. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
