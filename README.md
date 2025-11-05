@@ -17,6 +17,7 @@ Apresentar a proposta visual e a experiência inicial da plataforma MedFlow, ser
 
 - **HTML5**
 - **CSS3**
+- **JavaScript**
 
 ---
 
