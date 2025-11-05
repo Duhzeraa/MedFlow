@@ -32,3 +32,4 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', !expanded);
   navMenu.classList.toggle('open');
 });
+

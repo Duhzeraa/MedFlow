@@ -6,15 +6,17 @@
   <title>Medflow - Saúde para PCDs e Idosos com Tecnologia e IA</title>
   <meta name="description" content="Medflow: aplicativo de saúde acessível para PCDs e idosos com pré-consulta por IA, médicos especializados e planos flexíveis." />
   <meta name="keywords" content="Medflow, saúde, PCD, idosos, inteligência artificial, pré-consulta, médicos, planos, acessibilidade" />
-  <link rel="icon" href="img/medflow.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="icon" href="src/img/medflow.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/chatbot.css" />
 </head>
 <body>
   <!-- Header / Navbar -->
   <header class="header" role="banner">
     <nav class="navbar container" aria-label="Menu principal">
       <a href="#" class="logo" aria-label="Medflow - Página inicial">
-        <img src="img/medflow.svg" alt="" width="50" height="50">
+        <img src="src/img/medflow.svg" alt="" width="50" height="50">
         <span class="logo-text">Medflow</span>
       </a>
       <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menu">
@@ -26,7 +28,6 @@
         <li role="none"><a href="#planos" role="menuitem" tabindex="0">Planos</a></li>
         <li role="none"><a href="#sobre" role="menuitem" tabindex="0">Sobre</a></li>
         <li role="none"><a href="#contato" role="menuitem" tabindex="0">Contato</a></li>
-        <li role="none"><a href="AI/chatbot.html" role="menuitem" tabindex="0"id="iaTab">IA</a></li>
       </ul>
       <div class="nav-actions">
         <a href="#" class="btn btn-primary" aria-label="Baixar aplicativo Medflow">Baixar App</a>
@@ -48,7 +49,7 @@
       </div>
     </div>
     <div class="hero-image" aria-hidden="true">
-      <img src="img/hospital.jpg" alt="Ilustração de saúde e tecnologia" />
+      <img src="src/img/hospital.jpg" alt="Ilustração de saúde e tecnologia" />
     </div>
   </section>
 
@@ -186,17 +187,17 @@
     <h2>Depoimentos</h2>
     <div class="depoimentos-cards">
       <article class="depoimento-card" tabindex="0" role="region" aria-labelledby="dep1-name">
-        <img class="user-photo" src="url-da-foto-do-usuario.jpg" alt="Foto do usuário Ana Silva" onerror="this.onerror=null;this.src='img/padrao.png';" />
+        <img class="user-photo" src="src/img/padrao.png" alt="Foto do usuário Ana Silva" onerror="this.onerror=null;this.src='img/padrao.png';" />
         <h3 id="dep1-name">Ana Silva</h3>
         <p>"O Medflow facilitou muito minha vida. A pré-consulta com IA é rápida e me ajuda a entender melhor meus sintomas antes de ir ao médico."</p>
       </article>
       <article class="depoimento-card" tabindex="0" role="region" aria-labelledby="dep2-name">
-        <img class="user-photo" src="url-da-foto-do-usuario.jpg" alt="Foto do usuário João Pereira" onerror="this.onerror=null;this.src='img/padrao.png';" />
+        <img class="user-photo" src="src/img/padrao.png" alt="Foto do usuário João Pereira" onerror="this.onerror=null;this.src='img/padrao.png';" />
         <h3 id="dep2-name">João Pereira</h3>
         <p>"Como idoso, achei o app muito fácil de usar e a indicação de médicos especializados me deu muita segurança."</p>
       </article>  
       <article class="depoimento-card" tabindex="0" role="region" aria-labelledby="dep3-name">
-        <img class="user-photo" src="url-da-foto-do-usuario.jpg" alt="Foto do usuário Maria Oliveira" onerror="this.onerror=null;this.src='img/padrao.png';" />
+        <img class="user-photo" src="src/img/padrao.png" alt="Foto do usuário Maria Oliveira" onerror="this.onerror=null;this.src='img/padrao.png';" />
         <h3 id="dep3-name">Maria Oliveira</h3>
         <p>"Os planos para clínicas são excelentes e ajudaram meu consultório a crescer com tecnologia acessível."</p>
       </article>
@@ -238,7 +239,6 @@
           <li><a href="#planos">Planos</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
-          <li><a href="ia.html">IA</a></li>
         </ul>
       </nav>
       <div class="social-media" aria-label="Redes sociais">
@@ -265,6 +265,26 @@
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <div id="chatbot">
+        <div id="chatbot-toggle"></div>
+        <div id="chatbot-window">
+            <div id="chatbot-header">
+                <span id="chatbot-close">&times;</span>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot">Olá! Sou o MedBot, como posso te ajudar?</div> 
+            </div>
+
+            <div id="chatbot-input-area">
+            <div id="chatbot-quick-buttons">
+            </div>
+                <input type="text" id="chatbot-input" placeholder="Digite sua mensagem...">
+                <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+  <script src="src/js/main.js" defer></script>
+  <script src="src/js/chatbot.js"></script>
 </body>
 </html>

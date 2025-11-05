@@ -1,0 +1,808 @@
+/* =============================================
+   1. CONFIGURAÇÕES GLOBAIS
+   ============================================= */
+
+/* --- 1.1. Reset Básico --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- 1.2. Variáveis (Tema Claro - Padrão) --- */
+:root {
+  --primary: #005BBB;
+  --primary-light: #3385FF;
+  --primary-dark: #003D80;
+  --secondary: #6C757D;
+  --accent: #28A745;
+  --bg: #fff;
+  --surface: #F8F9FA;
+  --text: #212529;
+  --text-muted: #6C757D;
+  --border: #DEE2E6;
+  --error: #DC3545;
+  --success: #28A745;
+  --radius: .5rem;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, .1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, .1);
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fs-xs: .75rem;
+  --fs-sm: .875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-xxl: 1.5rem;
+  --fs-hero: 3rem;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-loose: 1.8;
+  --spacing-xs: .25rem;
+  --spacing-sm: .5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  --transition: all .3s ease;
+  --transition-fast: all .15s ease;
+}
+
+/* --- 1.3. Variáveis (Tema Escuro) --- */
+[data-theme="dark"] {
+  --primary: #3385FF;
+  --primary-light: #66A3FF;
+  --primary-dark: #0056B3;
+  --secondary: #ADB5BD;
+  --accent: #20C997;
+  --bg: #121212;
+  --surface: #1E1E1E;
+  --text: #E9ECEF;
+  --text-muted: #ADB5BD;
+  --border: #495057;
+  --error: #FF6B6B;
+  --success: #51CF66;
+}
+
+/* --- 1.4. Estilos Base (Body, Tipografia, Links) --- */
+body {
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--text);
+  background-color: var(--bg);
+  transition: var(--transition);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--spacing-md);
+  color: var(--text);
+}
+
+h1 {
+  font-size: var(--fs-hero);
+}
+
+h2 {
+  font-size: var(--fs-xxl);
+}
+
+h3 {
+  font-size: var(--fs-xl);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* =============================================
+   2. LAYOUT E COMPONENTES COMUNS
+   ============================================= */
+
+/* --- 2.1. Container --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* --- 2.2. Botões --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-base);
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: 44px;
+  min-width: 44px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* =============================================
+   3. COMPONENTES DE PÁGINA (Por Seção)
+   ============================================= */
+
+/* --- 3.1. Header / Navegação --- */
+.header {
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--spacing-md) 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--primary);
+}
+
+.logo-text {
+  color: var(--text);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+}
+
+.nav-menu a {
+  color: var(--text);
+  font-weight: var(--fw-medium);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius);
+}
+
+.nav-menu a:hover {
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Botão Hamburguer (Mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: all .3s ease;
+  position: relative;
+}
+
+.hamburger::before {
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+
+.hamburger::after {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+/* --- 3.2. Seção Hero --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+  min-height: 80vh;
+  padding: var(--spacing-xxl) 0;
+}
+
+.hero-text h1 {
+  font-size: var(--fs-hero);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: var(--fs-xl);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--lh-loose);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- 3.3. Seção Funcionalidades (Cards) --- */
+.funcionalidades {
+  padding: var(--spacing-xxl) 0;
+}
+
+.funcionalidades h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.card {
+  background: var(--surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.card .icon {
+  margin-bottom: var(--spacing-md);
+}
+
+.card h3 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary);
+}
+
+.card p {
+  color: var(--text-muted);
+  line-height: var(--lh-loose);
+}
+
+/* --- 3.4. Seção Planos (Tabela) --- */
+.planos {
+  padding: 2rem 0;
+  background: var(--surface);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.planos h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: var(--fs-xl);
+  color: var(--text);
+}
+
+.planos-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.planos-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  box-shadow: var(--shadow-md);
+}
+
+.planos-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  font-size: 0.9rem;
+}
+
+.planos-table th,
+.planos-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.planos-table th {
+  background: var(--surface);
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+
+.planos-table tbody tr:hover {
+  background: var(--surface);
+}
+
+.planos-table ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.planos-table li {
+  padding: 0.15rem 0;
+  color: var(--text-muted);
+}
+
+.planos-table li::before {
+  content: "✓ ";
+  color: var(--accent);
+  font-weight: var(--fw-bold);
+}
+
+/* --- 3.5. Seção Sobre --- */
+.sobre {
+  padding: var(--spacing-xxl) 0;
+  color: var(--text);
+}
+
+.sobre h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--fs-xxl);
+}
+
+.sobre-text {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-xxl);
+  text-align: justify;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-loose);
+  color: var(--text-muted);
+}
+
+.sobre-cards {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sobre-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  flex: 1 1 250px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.sobre-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.sobre-card h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--fs-xl);
+}
+
+.sobre-card p {
+  color: var(--text-muted);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+.sobre-card .icon {
+  margin-bottom: var(--spacing-md);
+  fill: var(--primary);
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- 3.6. Seção Depoimentos --- */
+.depoimentos {
+  padding: var(--spacing-xxl) 0;
+  background: var(--surface);
+}
+
+.depoimentos h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.depoimentos-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.depoimento-card {
+  background: var(--bg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.depoimento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.user-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--spacing-md);
+  border: 3px solid var(--primary);
+}
+
+.depoimento-card h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.depoimento-card p {
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: var(--lh-loose);
+}
+
+/* --- 3.7. Seção Contato (Formulário) --- */
+.contato {
+  padding: var(--spacing-xxl) 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.contato h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--fs-xxl);
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: background-color .3s, color .3s;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  padding: var(--spacing-sm);
+  font-size: var(--fs-base);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color .3s, background-color .3s, color .3s;
+  resize: vertical;
+  min-height: 40px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary-light);
+}
+
+.error-message {
+  color: var(--error);
+  font-size: var(--fs-xs);
+  min-height: 1.2em;
+  margin-top: .2rem;
+}
+
+.form-feedback {
+  margin-top: var(--spacing-md);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-base);
+  color: var(--success);
+  text-align: center;
+  min-height: 1.5em;
+}
+
+button[type=submit] {
+  width: 100%;
+  margin-top: var(--spacing-md);
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: var(--spacing-md);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+button[type=submit]:hover,
+button[type=submit]:focus {
+  background: var(--primary-dark);
+  outline: none;
+}
+
+/* --- 3.8. Footer (Rodapé) --- */
+.footer {
+  background: var(--surface);
+  color: var(--text-muted);
+  padding: var(--spacing-lg) 0;
+  font-size: var(--fs-sm);
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color .3s;
+  font-weight: var(--fw-medium);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: var(--primary);
+  outline: none;
+}
+
+.social-media {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.social-media a {
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .3s;
+}
+
+.social-media a:hover,
+.social-media a:focus {
+  color: var(--primary-dark);
+  outline: none;
+}
+
+.social-media svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.copyright {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  margin-top: var(--spacing-md);
+}
+
+/* =============================================
+   4. RESPONSIVIDADE (MEDIA QUERIES)
+   ============================================= */
+
+/* --- 4.1. Tablets e Desktops Menores (<= 1200px) --- */
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- 4.2. Tablets (<= 900px) --- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: var(--spacing-lg);
+  }
+
+  .sobre-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  /* Ajusta os cards 'sobre' para coluna */
+  .sobre-cards {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Menu Mobile --- */
+  .nav-menu {
+    position: fixed;
+    top: 64px; /* Altura do header - ajuste se necessário */
+    right: 0;
+    background: var(--bg);
+    width: 240px;
+    height: calc(100% - 64px);
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, .15);
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index: 999;
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-menu li {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* --- 4.3. Celulares (<= 600px) --- */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: var(--fs-xxl); /* Reduz um pouco o título no mobile */
+  }
+
+  .subtitle {
+    font-size: var(--fs-lg);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+}
